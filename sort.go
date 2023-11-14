@@ -116,5 +116,4 @@ func main() {
 	fmt.Println("Quick Sorted array:", len(sortedArr))
 	// fmt.Println("Quick Sorted array:", sortedArr)
 	fmt.Println("QuickSort execution time:", elapsedTime)
-    
 }
