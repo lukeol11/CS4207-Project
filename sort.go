@@ -48,23 +48,22 @@ func quickSort(arr []int) []int {
 
 //? Takes two sorted arrays and makes one single sorted array
 func merge(left, right []int) []int {
-	i, j := 0, 0
-	result := make([]int, 0, len(left)+len(right))
+    sortedArr := make([]int, 0, len(left)+len(right))
 
-	for i < len(left) && j < len(right) {
-		if left[i] > right[j] {
-			result = append(result, right[j])
-			j++
-		} else {
-			result = append(result, left[i])
-			i++
-		}
-	}
+    for len(left) > 0 && len(right) > 0 {
+        if left[0] < right[0] {
+            sortedArr = append(sortedArr, left[0])
+            left = left[1:]
+        } else {
+            sortedArr = append(sortedArr, right[0])
+            right = right[1:]
+        }
+    }
 
-	result = append(result, left[i:]...)
-	result = append(result, right[j:]...)
+    sortedArr = append(sortedArr, left...)
+    sortedArr = append(sortedArr, right...)
 
-	return result
+    return sortedArr
 }
 
 //? Recursively splits array into halves until it is a single element then start merging
