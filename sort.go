@@ -8,6 +8,7 @@ import (
 
 //! QuickSort
 
+//? Recursively splits array into halves until it is a single element then start sorting
 func quickSort(arr []int) []int {
 	var wg sync.WaitGroup
 	var left, right []int
@@ -45,6 +46,7 @@ func quickSort(arr []int) []int {
 
 //! MergeSort
 
+//? Takes two sorted arrays and makes one single sorted array
 func merge(left, right []int) []int {
 	i, j := 0, 0
 	result := make([]int, 0, len(left)+len(right))
@@ -65,6 +67,7 @@ func merge(left, right []int) []int {
 	return result
 }
 
+//? Recursively splits array into halves until it is a single element then start merging
 func mergeSort(arr []int) []int {
 	var wg sync.WaitGroup
 	var left, right []int
